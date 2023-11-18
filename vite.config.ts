@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import VueMacros from 'unplugin-vue-macros/vite'
+// import VueMacros from 'unplugin-vue-macros/vite'
 import { viteMockServe } from 'vite-plugin-mock'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -18,12 +18,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    VueMacros({
-      plugins: {
-        vue: vue(),
-        vueJsx: vueJsx() // if needed
-      }
-    }),
+    vue(),
+    vueJsx(), // if needed
+
     Pages({
       dirs: [{ dir: 'src/pages', baseRoute: '/' }]
     }),
